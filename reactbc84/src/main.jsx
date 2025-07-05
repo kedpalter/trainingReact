@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import BT1_HomeComponent from './components/BT1_HomeComponent'
+import DataBinding from './databinding/DataBinding'
+import HandleEvent from './HandleEvent/HandleEvent'
+// import CSS
+
+// import "./css/index.css";
+
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <>
+    <BT1_HomeComponent />
+    <hr />
+    <DataBinding />
+    <hr />
+    <HandleEvent />
+  </>
+
 )

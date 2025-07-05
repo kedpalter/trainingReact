@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Có thể tùy biến CSS */
+a {
+    text-decoration: none;
+}
