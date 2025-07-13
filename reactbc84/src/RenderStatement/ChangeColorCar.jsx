@@ -26,7 +26,7 @@ const ChangeColorCar = () => {
           <button className="btn btn-dark" onClick={() => {
             changeColor('black');
           }}>Black car</button>
-        </div>
+                  </div>
       </div>
 
 

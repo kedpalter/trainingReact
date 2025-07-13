@@ -11,6 +11,10 @@ import TinkerApp from './RenderStatement/TinkerApp'
 import ChangeFontSize from './StyleComponent/ChangeFontSize'
 import DemoStyle from './StyleComponent/DemoStyle'
 import DemoProps from './Props/DemoProps'
+import BT_ProductList from './Props/BTProps/BT_ProductList'
+import BT_ProductItem from './Props/BTProps/BT_ProductItem'
+import BT_StateProps from './Props/BT_StateProps/BT_StateProps'
+import BT_ChonXe from './Props/BT_ChonXe/BT_ChonXe'
 // import CSS
 
 // import "./css/index.css";
@@ -19,26 +23,19 @@ import DemoProps from './Props/DemoProps'
 createRoot(document.getElementById('root')).render(
   <>
     {/* <BT1_HomeComponent /> */}
-    <hr />
     {/* <DataBinding /> */}
-    <hr />
     {/* <HandleEvent /> */}
-    <hr />
     {/* <RenderCondition /> */}
-    <hr />
     {/* <RenderStatement /> */}
-    <hr />
     {/* <DemoChangeNumber /> */}
-    <hr />
     {/* <ChangeColorCar /> */}
-    <hr />
     {/* <TinkerApp /> */}
-    <hr />
     {/* <ChangeFontSize /> */}
-    <hr />
     {/* <DemoStyle /> */}
-    <hr />
-    <DemoProps />
+
+    {/* <BT_ProductList /> */}
+    <BT_StateProps />
+    {/* <BT_ChonXe /> */}
   </>
 
 )
