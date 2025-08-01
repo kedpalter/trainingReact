@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BT_SanPham = (props) => { //props.item, props.handleSetStateProduct
-    let { item, handleSetStateProduct } = props;
+    let { item, handleSetStateProduct, setGioHang } = props;
     return (
         <div className="card">
             <img src={item.hinhAnh} alt="..." height={250} style={{ objectFit: 'contain' }} />

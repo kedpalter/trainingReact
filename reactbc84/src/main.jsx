@@ -37,11 +37,11 @@ createRoot(document.getElementById('root')).render(
     {/* <DemoStyle /> */}
 
     {/* <BT_ProductList /> */}
-    {/* <BT_StateProps /> */}
+    <BT_StateProps />
     {/* <BT_ChonXe /> */}
     {/* <BT_MonAn /> */}
     {/* <ProductsPage /> */}
-    <ToDoListApi />
+    {/* <ToDoListApi /> */}
     {/*
       Phân biệt State và Props:
       ∙ State: giá trị thay đổi dùng để binding lên giao diện, state có thể gán lại giá trị (state, setState)
