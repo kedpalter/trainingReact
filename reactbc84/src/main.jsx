@@ -20,6 +20,11 @@ import ProductsPage from './api/ProductsPage'
 import ToDoListApi from './api/ToDoListApi'
 import DemoFormLogin from './Form/DemoFormLogin'
 import DemoFormik from './Form/DemoFormik'
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
+import HomeIndex from './Pages/HomeIndex'
+import Login from './Pages/Login'
+import HomeTemplate from './template/HomeTemplate'
+import Register from './Pages/Register'
 // import CSS
 
 // import "./css/index.css";
@@ -45,12 +50,33 @@ createRoot(document.getElementById('root')).render(
     {/* <ProductsPage /> */}
     {/* <ToDoListApi /> */}
     {/* <DemoFormLogin /> */}
-    <DemoFormik />
+    {/* <DemoFormik /> */}
     {/*
       Phân biệt State và Props:
       ∙ State: giá trị thay đổi dùng để binding lên giao diện, state có thể gán lại giá trị (state, setState)
       ∙ Props: giá trị có thể thay đổi dùng để binding lên giao diện, props không thể gán lại giá trị (read-only)
     */}
+    {/* REACT ROUTER DOM ------------------------------------------------ */}
+    <BrowserRouter>
+      <Routes>
+
+
+        <Route path='' element={<HomeTemplate />}>
+
+
+          <Route index element={<HomeIndex />}></Route>
+          <Route path='login' element={<Login />}></Route>
+          <Route path='register' element={<Register />}></Route>
+        </Route>
+
+        <Route path='api'>
+          <Route path='todolist' element={<ToDoListApi />} />
+          <Route path='productpage' element={<ProductsPage />}></Route>
+        </Route>
+
+
+      </Routes>
+    </BrowserRouter>
   </>
 
 )
