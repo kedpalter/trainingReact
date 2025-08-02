@@ -18,6 +18,8 @@ import BT_ChonXe from './Props/BT_ChonXe/BT_ChonXe'
 import BT_MonAn from './Props/BT_MonAn/BT_MonAn'
 import ProductsPage from './api/ProductsPage'
 import ToDoListApi from './api/ToDoListApi'
+import DemoFormLogin from './Form/DemoFormLogin'
+import DemoFormik from './Form/DemoFormik'
 // import CSS
 
 // import "./css/index.css";
@@ -37,11 +39,13 @@ createRoot(document.getElementById('root')).render(
     {/* <DemoStyle /> */}
 
     {/* <BT_ProductList /> */}
-    <BT_StateProps />
+    {/* <BT_StateProps /> */}
     {/* <BT_ChonXe /> */}
     {/* <BT_MonAn /> */}
     {/* <ProductsPage /> */}
     {/* <ToDoListApi /> */}
+    {/* <DemoFormLogin /> */}
+    <DemoFormik />
     {/*
       Phân biệt State và Props:
       ∙ State: giá trị thay đổi dùng để binding lên giao diện, state có thể gán lại giá trị (state, setState)
