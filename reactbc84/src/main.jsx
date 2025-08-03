@@ -25,6 +25,11 @@ import HomeIndex from './Pages/HomeIndex'
 import Login from './Pages/Login'
 import HomeTemplate from './template/HomeTemplate'
 import Register from './Pages/Register'
+import DemoUseNavigate from './Pages/ReactRouterDom/DemoUseNavigate'
+import ForgotPass from './Pages/ReactRouterDom/ForgotPass'
+import DemoUseParam from './Pages/ReactRouterDom/DemoUseParam'
+import HeaderHome from './template/HeaderHome'
+import DemoUseSearchParam from './Pages/ReactRouterDom/DemoUseSearchParam'
 // import CSS
 
 // import "./css/index.css";
@@ -69,9 +74,31 @@ createRoot(document.getElementById('root')).render(
           <Route path='register' element={<Register />}></Route>
         </Route>
 
-        <Route path='api'>
+        <Route path='api' element={
+          <div>
+
+            <header className='bg-dark text-white p-3'>Header</header>
+            <Outlet />
+            <footer className='bg-dark text-white p-3'>Footer</footer>
+
+          </div>}>
           <Route path='todolist' element={<ToDoListApi />} />
           <Route path='productpage' element={<ProductsPage />}></Route>
+        </Route>
+
+        <Route path='react-router-dom' element={<HomeTemplate />}>
+          <Route path='demo-use-navigate' element={<DemoUseNavigate />}></Route>
+          <Route path='forgot-pass' element={<ForgotPass />}></Route>
+          <Route path='use-search-param' element={<DemoUseSearchParam />}></Route>
+        </Route>
+
+        <Route path='demo-use-param'>
+          <Route path=':id' element={
+            <div>
+              <HeaderHome ></HeaderHome>
+              <DemoUseParam />
+            </div>}>
+          </Route>
         </Route>
 
 

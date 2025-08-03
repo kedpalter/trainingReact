@@ -14,19 +14,19 @@ const HeaderHome = () => {
                 <div className="collapse navbar-collapse" id="collapsibleNavId">
                     <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link active" to="/" aria-current="page">Home <span className="visually-hidden">(current)</span></NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/" aria-current="page">Home <span className="visually-hidden">(current)</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/login">Link</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/login">Login</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/register">Register</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/register">Register</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <NavLink className="nav-link dropdown-toggle" to="" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</NavLink>
+                            <NavLink className="nav-link dropdown-toggle" to="" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">React Router Dom</NavLink>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
-                                <NavLink className="dropdown-item" to="#">Action 1</NavLink>
-                                <NavLink className="dropdown-item" to="#">Action 2</NavLink>
+                                <NavLink className="dropdown-item" to="/react-router-dom/demo-use-navigate">Demo use nav</NavLink>
+                                <NavLink className="dropdown-item" to="/react-router-dom/use-search-param">Demo use search param</NavLink>
                             </div>
                         </li>
                     </ul>

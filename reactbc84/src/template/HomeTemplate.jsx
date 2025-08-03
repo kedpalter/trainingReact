@@ -7,7 +7,7 @@ const HomeTemplate = () => {
     return (
         <div>
             <HeaderHome />
-
+            {/* Nội dung trang con hiển thị */}
 
             <Outlet />
         </div>
