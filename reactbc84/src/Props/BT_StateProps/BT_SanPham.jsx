@@ -16,7 +16,7 @@ const BT_SanPham = (props) => { //props.item, props.handleSetStateProduct
                     const sanPhamGioHang = {...item, soLuong: 1};
                     setGioHang(stateGioHang => {
                         stateGioHang.push(sanPhamGioHang);
-                        return [...stateGioHang]; // imutable
+                        return [...stateGioHang]; // immutable (tính bất biến) | mutate: thay đổi
                     })
                 }}>Thêm giỏ hàng</button>
             </div>

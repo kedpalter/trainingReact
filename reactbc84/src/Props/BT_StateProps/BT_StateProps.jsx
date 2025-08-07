@@ -31,7 +31,47 @@ const BT_StateProps = () => {
         let gioHangMoi = gioHang.filter((item) => {
             return item.maSP != maSP;
         })
+        // Viết gọn hơn: let gioHangMoi = gioHang.filter((item) => item.maSP != maSP)
+
         // Cập nhật lại giỏ hàng mới
+        setGioHang(gioHangMoi);
+    }
+
+    const tangSoLuong = (maSP) => {
+        let gioHangMoi = [...gioHang]; // Clone ra giỏ hàng mới
+        // Tìm SP có mã SP trùng với maSP
+        let sanPham = gioHangMoi.find((item)=>{
+            return item.maSP == maSP; // trả về boolean
+        })
+        // Nếu không tìm thấy SP
+        if (!sanPham) {
+            alert("Sản phẩm không tồn tại")
+            return;
+        }
+        // Nếu tìm thấy SP
+        sanPham.soLuong += 1;
+        // Cập nhật lại giỏ hàng mới (setState)
+        setGioHang(gioHangMoi);
+
+    }
+    const giamSoLuong = (maSP) => {
+        console.log('giam SL', maSP)
+        let gioHangMoi = [...gioHang];
+        let sanPham = gioHangMoi.find((item) => {
+            return item.maSP == maSP;
+        })
+
+        if (!sanPham) {
+            alert("Sản phẩm không tồn tại")
+            return;
+        }
+        // Nếu số lượng >= 1 thì giảm, nếu SP = 1 thì xóa luôn
+        if (sanPham.soLuong == 1) {
+            xuLyXoaSP(sanPham.maSP);
+            return;
+        }
+
+        sanPham.soLuong -= 1;
         setGioHang(gioHangMoi);
     }
 
@@ -55,12 +95,11 @@ const BT_StateProps = () => {
     // themGioHang(item);
     return (
         <div className='container'>
-            <BT_GioHang gioHang={gioHang} xoaSanPham={xuLyXoaSP}/>
+            <BT_GioHang gioHang={gioHang} xoaSanPham={xuLyXoaSP} giamSL={giamSoLuong} tangSL={tangSoLuong}/>
 
             <h3>Danh sách sản phẩm</h3>
             <div className="phones row">
                 {renderPhone()}
-
 
                 <div className="detail mt-5 row">
                     <div className='col-3'>
