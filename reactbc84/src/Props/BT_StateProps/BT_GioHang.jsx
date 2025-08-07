@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BT_GioHang = (props) => {
-  const { gioHang } = props;
+  const { gioHang, xoaSanPham } = props;
   return (
     <div>
       <h3 className='text-right'>Giỏ hàng</h3>
@@ -37,7 +37,7 @@ const BT_GioHang = (props) => {
               <td>{item.giaBan}</td>
               <td>{item.soLuong * item.giaBan}</td>
               <td>
-                <button className="btn btn-danger">Xóa</button>
+                <button className="btn btn-danger" onClick={() => xoaSanPham(item.maSP)}>Xóa</button>
               </td>
             </tr>
           })}

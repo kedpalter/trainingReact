@@ -12,7 +12,7 @@ const BT_StateProps = () => {
     const [gioHang, setGioHang] = useState([
         { "maSP": 1, "tenSP": "VinSmart Live", "manHinh": "AMOLED, 6.2, Full HD+", "heDieuHanh": "Android 9.0 (Pie)", "cameraTruoc": "20 MP", "cameraSau": "Chính 48 MP & Phụ 8 MP, 5 MP", "ram": "4 GB", "rom": "64 GB", "giaBan": 5700, "hinhAnh": "./img/vsphone.jpg", soLuong: 10 }
     ])
-    // 1. Với mỗi dataPhone sẽ render ra 1 card
+    // 1. Với mỗi dataPhone sẽ render ra 1 card | Phần DS Sản phẩm
     const renderPhone = () => {
         let arrPhoneJSX = dataPhone.map((item, index) => {
             return <div className="col-md-4 mt-2">
@@ -24,6 +24,15 @@ const BT_StateProps = () => {
     // Gán vào nút
     const handleViewDetail = (prodClick) => { // click vào item nào thì set state lại product detail = item đó
         setProductDetail(prodClick);
+    }
+
+    const xuLyXoaSP = (maSP) => {
+        // Lọc ra giỏ hàng mới mà: không có sản phẩm có mã sản phẩm là maSP
+        let gioHangMoi = gioHang.filter((item) => {
+            return item.maSP != maSP;
+        })
+        // Cập nhật lại giỏ hàng mới
+        setGioHang(gioHangMoi);
     }
 
     // const themGioHang = (spClick) => {
@@ -46,7 +55,7 @@ const BT_StateProps = () => {
     // themGioHang(item);
     return (
         <div className='container'>
-            <BT_GioHang gioHang={gioHang} />
+            <BT_GioHang gioHang={gioHang} xoaSanPham={xuLyXoaSP}/>
 
             <h3>Danh sách sản phẩm</h3>
             <div className="phones row">

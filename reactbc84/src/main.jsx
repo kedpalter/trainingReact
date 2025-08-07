@@ -49,7 +49,7 @@ createRoot(document.getElementById('root')).render(
     {/* <DemoStyle /> */}
 
     {/* <BT_ProductList /> */}
-    {/* <BT_StateProps /> */}
+    <BT_StateProps />
     {/* <BT_ChonXe /> */}
     {/* <BT_MonAn /> */}
     {/* <ProductsPage /> */}
@@ -62,7 +62,7 @@ createRoot(document.getElementById('root')).render(
       ∙ Props: giá trị có thể thay đổi dùng để binding lên giao diện, props không thể gán lại giá trị (read-only)
     */}
     {/* REACT ROUTER DOM ------------------------------------------------ */}
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
 
 
@@ -103,7 +103,7 @@ createRoot(document.getElementById('root')).render(
 
 
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
   </>
 
 )
