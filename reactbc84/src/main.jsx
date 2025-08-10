@@ -30,13 +30,21 @@ import ForgotPass from './Pages/ReactRouterDom/ForgotPass'
 import DemoUseParam from './Pages/ReactRouterDom/DemoUseParam'
 import HeaderHome from './template/HeaderHome'
 import DemoUseSearchParam from './Pages/ReactRouterDom/DemoUseSearchParam'
+import AntdDemo from './Pages/AntdDemo/AntdDemo'
 // import CSS
 
 // import "./css/index.css";
 
+// setup dedux
+import { Provider } from 'react-redux';
+import { store } from './redux/Store'
+import ChangeNumberRedux from './Pages/ReduxDemo/ChangeNumberRedux'
+
+
 
 createRoot(document.getElementById('root')).render(
   <>
+
     {/* <BT1_HomeComponent /> */}
     {/* <DataBinding /> */}
     {/* <HandleEvent /> */}
@@ -49,7 +57,7 @@ createRoot(document.getElementById('root')).render(
     {/* <DemoStyle /> */}
 
     {/* <BT_ProductList /> */}
-    <BT_StateProps />
+    {/* <BT_StateProps /> */}
     {/* <BT_ChonXe /> */}
     {/* <BT_MonAn /> */}
     {/* <ProductsPage /> */}
@@ -62,48 +70,52 @@ createRoot(document.getElementById('root')).render(
       ∙ Props: giá trị có thể thay đổi dùng để binding lên giao diện, props không thể gán lại giá trị (read-only)
     */}
     {/* REACT ROUTER DOM ------------------------------------------------ */}
-    {/* <BrowserRouter>
-      <Routes>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routes>
 
 
-        <Route path='' element={<HomeTemplate />}>
+          <Route path='' element={<HomeTemplate />}>
 
 
-          <Route index element={<HomeIndex />}></Route>
-          <Route path='login' element={<Login />}></Route>
-          <Route path='register' element={<Register />}></Route>
-        </Route>
-
-        <Route path='api' element={
-          <div>
-
-            <header className='bg-dark text-white p-3'>Header</header>
-            <Outlet />
-            <footer className='bg-dark text-white p-3'>Footer</footer>
-
-          </div>}>
-          <Route path='todolist' element={<ToDoListApi />} />
-          <Route path='productpage' element={<ProductsPage />}></Route>
-        </Route>
-
-        <Route path='react-router-dom' element={<HomeTemplate />}>
-          <Route path='demo-use-navigate' element={<DemoUseNavigate />}></Route>
-          <Route path='forgot-pass' element={<ForgotPass />}></Route>
-          <Route path='use-search-param' element={<DemoUseSearchParam />}></Route>
-        </Route>
-
-        <Route path='demo-use-param'>
-          <Route path=':id' element={
-            <div>
-              <HeaderHome ></HeaderHome>
-              <DemoUseParam />
-            </div>}>
+            <Route index element={<HomeIndex />}></Route>
+            <Route path='login' element={<Login />}></Route>
+            <Route path='register' element={<Register />}></Route>
+            <Route path='antd' element={<AntdDemo />}></Route>
+            <Route path='redux-change-number' element={<ChangeNumberRedux />}></Route>
           </Route>
-        </Route>
+
+          <Route path='api' element={
+            <div>
+
+              <header className='bg-dark text-white p-3'>Header</header>
+              <Outlet />
+              <footer className='bg-dark text-white p-3'>Footer</footer>
+
+            </div>}>
+            <Route path='todolist' element={<ToDoListApi />} />
+            <Route path='productpage' element={<ProductsPage />}></Route>
+          </Route>
+
+          <Route path='react-router-dom' element={<HomeTemplate />}>
+            <Route path='demo-use-navigate' element={<DemoUseNavigate />}></Route>
+            <Route path='forgot-pass' element={<ForgotPass />}></Route>
+            <Route path='use-search-param' element={<DemoUseSearchParam />}></Route>
+          </Route>
+
+          <Route path='demo-use-param'>
+            <Route path=':id' element={
+              <div>
+                <HeaderHome ></HeaderHome>
+                <DemoUseParam />
+              </div>}>
+            </Route>
+          </Route>
 
 
-      </Routes>
-    </BrowserRouter> */}
+        </Routes>
+      </Provider>
+    </BrowserRouter>
   </>
 
 )

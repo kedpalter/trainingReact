@@ -20,6 +20,9 @@ const HeaderHome = () => {
                             <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/login">Login</NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/antd">Ant</NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/register">Register</NavLink>
                         </li>
                         <li className="nav-item dropdown">
