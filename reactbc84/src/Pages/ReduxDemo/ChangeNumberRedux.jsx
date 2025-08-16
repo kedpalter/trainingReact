@@ -22,6 +22,7 @@ const ChangeNumberRedux = () => {
                 type: 'CHANGE_NUMBER_ACTION',
                 payload: -1
             }
+            dispatch(actionOb)
         }}>-</button>
     </div>
   )

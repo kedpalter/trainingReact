@@ -1,10 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { ShoppingCartOutlined } from '@ant-design/icons'
+import { Badge } from 'antd'
+import { useSelector } from 'react-redux'
 
 const HeaderHome = () => {
-
-
-
+    const navigate = useNavigate();
+    const { carts } = useSelector(state => state.product)
+    const handleRedirectShoppingCart = () => {
+        navigate('/redux-shopping-cart')
+    }
     return (
         <header>
             {/* bs5-navbar-background */}
@@ -30,15 +35,23 @@ const HeaderHome = () => {
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/react-router-dom/demo-use-navigate">Demo use nav</NavLink>
                                 <NavLink className="dropdown-item" to="/react-router-dom/use-search-param">Demo use search param</NavLink>
+                                <NavLink className="dropdown-item" to="/redux-products">Redux Products</NavLink>
+                                <NavLink className="dropdown-item" to="/redux-shopping-cart">Redux Shopping Carts</NavLink>
                             </div>
                         </li>
                     </ul>
-                    <form className="d-flex my-2 my-lg-0">
-                        <input className="form-control me-sm-2" type="text" placeholder="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
-                    </form>
+                    <div className="d-flex items-center justify-content-center gap-3">
+                        {/* <ShoppingCartOutlined style={{ fontSize: "32px" }} className='text-white' /> */}
+                        <Badge count={carts.length} size='default' onClick={handleRedirectShoppingCart}>
+                            <ShoppingCartOutlined style={{ fontSize: "2.2rem", cursor: "pointer" }} className='text-white' />
+                        </Badge>
+                        <form className="d-flex my-2 my-lg-0">
+                            <input className="form-control me-sm-2" type="text" placeholder="Search" />
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                Search
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </nav>
             {/* thẻ a đổi thành NavLink, href đổi thành to, để react chỉ load lại outlet thay vì load lại toàn bộ trang web */}

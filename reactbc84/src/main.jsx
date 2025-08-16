@@ -39,6 +39,9 @@ import AntdDemo from './Pages/AntdDemo/AntdDemo'
 import { Provider } from 'react-redux';
 import { store } from './redux/Store'
 import ChangeNumberRedux from './Pages/ReduxDemo/ChangeNumberRedux'
+import ReduxProducts from './Pages/ReduxDemo/reduxProducts'
+import ReduxShoppingCart from './Pages/ShoppingCart/reduxShoppingCart'
+
 
 
 
@@ -83,6 +86,8 @@ createRoot(document.getElementById('root')).render(
             <Route path='register' element={<Register />}></Route>
             <Route path='antd' element={<AntdDemo />}></Route>
             <Route path='redux-change-number' element={<ChangeNumberRedux />}></Route>
+            <Route path='redux-products' element={<ReduxProducts/>}></Route>
+            <Route path='redux-shopping-cart' element={<ReduxShoppingCart />}></Route>
           </Route>
 
           <Route path='api' element={

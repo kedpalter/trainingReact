@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import productSlice from './products'
 
 // Khi bất kỳ dispatch nào được gọi thì tất cả reducer đều chạy hết
 export const store = configureStore({
@@ -11,7 +12,9 @@ export const store = configureStore({
                 state += action.payload
             }
             return state
-        } // hàm không phải 1 giá trị (chạy khi ứng dụng start và mỗi khi state thay đổi)
+        }, // hàm không phải 1 giá trị (chạy khi ứng dụng start và mỗi khi state thay đổi)
+        product: productSlice
+
 
 
     }
