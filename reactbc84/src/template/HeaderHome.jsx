@@ -37,6 +37,7 @@ const HeaderHome = () => {
                                 <NavLink className="dropdown-item" to="/react-router-dom/use-search-param">Demo use search param</NavLink>
                                 <NavLink className="dropdown-item" to="/redux-products">Redux Products</NavLink>
                                 <NavLink className="dropdown-item" to="/redux-shopping-cart">Redux Shopping Carts</NavLink>
+                                <NavLink className="dropdown-item" to="/film-booking">Booking Ticket</NavLink>
                             </div>
                         </li>
                     </ul>
