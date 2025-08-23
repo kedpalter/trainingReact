@@ -42,6 +42,11 @@ import ChangeNumberRedux from './Pages/ReduxDemo/ChangeNumberRedux'
 import ReduxProducts from './Pages/ReduxDemo/reduxProducts'
 import ReduxShoppingCart from './Pages/ShoppingCart/reduxShoppingCart'
 import BookingTicketPage from './Pages/ReduxDemo/BookingTicketPage'
+import DemoGetApiThunk from './ReduxMiddleWare/DemoGetApiThunk'
+import ProductManagement from './Pages/Admin/ProductManagement'
+import AdminTemplate from './template/AdminTemplate'
+import ProductEdit from './Pages/Admin/ProductEdit'
+import BTStore from './redux/BTStore'
 
 
 
@@ -87,9 +92,11 @@ createRoot(document.getElementById('root')).render(
             <Route path='register' element={<Register />}></Route>
             <Route path='antd' element={<AntdDemo />}></Route>
             <Route path='redux-change-number' element={<ChangeNumberRedux />}></Route>
-            <Route path='redux-products' element={<ReduxProducts/>}></Route>
+            <Route path='redux-products' element={<ReduxProducts />}></Route>
             <Route path='redux-shopping-cart' element={<ReduxShoppingCart />}></Route>
             <Route path='film-booking' element={<BookingTicketPage />}></Route>
+            <Route path='redux-thunk' element={<DemoGetApiThunk />}></Route>
+            <Route path='store' element={<BTStore />}></Route>
           </Route>
 
           <Route path='api' element={
@@ -117,6 +124,11 @@ createRoot(document.getElementById('root')).render(
                 <DemoUseParam />
               </div>}>
             </Route>
+          </Route>
+          <Route path='admin' element={<AdminTemplate />}>
+            <Route path='product-management' element={<ProductManagement />}></Route>
+            <Route path='product-edit/:id' element={<ProductEdit />}></Route>
+
           </Route>
 
 

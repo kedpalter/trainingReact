@@ -38,6 +38,7 @@ const HeaderHome = () => {
                                 <NavLink className="dropdown-item" to="/redux-products">Redux Products</NavLink>
                                 <NavLink className="dropdown-item" to="/redux-shopping-cart">Redux Shopping Carts</NavLink>
                                 <NavLink className="dropdown-item" to="/film-booking">Booking Ticket</NavLink>
+                                <NavLink className="dropdown-item" to="/redux-thunk">Redux Thunk</NavLink>
                             </div>
                         </li>
                     </ul>
