@@ -47,6 +47,12 @@ import ProductManagement from './Pages/Admin/ProductManagement'
 import AdminTemplate from './template/AdminTemplate'
 import ProductEdit from './Pages/Admin/ProductEdit'
 import BTStore from './redux/BTStore'
+import DemoUseMemo from './Pages/HookToiUu/DemoUseMemo/DemoUseMemo'
+import DemoUseCallback from './Pages/HookToiUu/DemoUseCallback/DemoUseCallback'
+import DemoUseRef from './Pages/HookToiUu/DemoUseRef/DemoUseRef'
+import DemoCustomHook from './Pages/HookToiUu/CustomHook/DemoCustomHook'
+import LoginAuth from './Pages/Auth/LoginAuth'
+import RegisterAuth from './Pages/Auth/RegisterAuth'
 
 
 
@@ -88,8 +94,8 @@ createRoot(document.getElementById('root')).render(
 
 
             <Route index element={<HomeIndex />}></Route>
-            <Route path='login' element={<Login />}></Route>
-            <Route path='register' element={<Register />}></Route>
+            <Route path='login' element={<LoginAuth />}></Route>
+            <Route path='register' element={<RegisterAuth />}></Route>
             <Route path='antd' element={<AntdDemo />}></Route>
             <Route path='redux-change-number' element={<ChangeNumberRedux />}></Route>
             <Route path='redux-products' element={<ReduxProducts />}></Route>
@@ -97,6 +103,11 @@ createRoot(document.getElementById('root')).render(
             <Route path='film-booking' element={<BookingTicketPage />}></Route>
             <Route path='redux-thunk' element={<DemoGetApiThunk />}></Route>
             <Route path='store' element={<BTStore />}></Route>
+            <Route path='demo-usememo' element={<DemoUseMemo />}></Route>
+            <Route path='demo-usecallback' element={<DemoUseCallback />}></Route>
+            <Route path='demo-useref' element={<DemoUseRef />}></Route>
+            <Route path='customhook-fetchdata' element={<DemoCustomHook />}></Route>
+
           </Route>
 
           <Route path='api' element={

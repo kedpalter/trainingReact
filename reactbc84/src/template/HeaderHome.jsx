@@ -39,6 +39,22 @@ const HeaderHome = () => {
                                 <NavLink className="dropdown-item" to="/redux-shopping-cart">Redux Shopping Carts</NavLink>
                                 <NavLink className="dropdown-item" to="/film-booking">Booking Ticket</NavLink>
                                 <NavLink className="dropdown-item" to="/redux-thunk">Redux Thunk</NavLink>
+                                
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <NavLink className="nav-link dropdown-toggle" to="" id="hooktoiuu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hook tối ưu</NavLink>
+                            <div className="dropdown-menu" aria-labelledby="hooktoiuu">
+                                <NavLink className="dropdown-item" to="/demo-usememo">Use Memo</NavLink>
+                                <NavLink className="dropdown-item" to="/demo-usecallback">Use Callback</NavLink>
+                                <NavLink className="dropdown-item" to="/demo-useref">Use Ref</NavLink>
+                                <NavLink className="dropdown-item" to="/demo-customhook">Custom Hook</NavLink>
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <NavLink className="nav-link dropdown-toggle" to="" id="customhook" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Custom Hook</NavLink>
+                            <div className="dropdown-menu" aria-labelledby="customhook">
+                                <NavLink className="dropdown-item" to="/customhook-fetchdata">Custom Hook Fetch Data</NavLink>
                             </div>
                         </li>
                     </ul>
