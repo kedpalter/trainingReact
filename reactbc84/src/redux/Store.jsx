@@ -2,22 +2,25 @@ import { configureStore } from '@reduxjs/toolkit';
 import productSlice from './products'
 import dsGheReducer from './dsGheReducer';
 import ProductReducer from './ProductReducer';
+import storeReducer from './storeReducer';
+import userReducer from './userReducer';
 // Khi bất kỳ dispatch nào được gọi thì tất cả reducer đều chạy hết
 export const store = configureStore({
     reducer: {
         // state sẽ chứa trong store
         numberReducer: (state = 10, action) => {
-            
+
             // action = {type: 'ten_action', payload: data}
-            if (action.type =='CHANGE_NUMBER_ACTION') {
+            if (action.type == 'CHANGE_NUMBER_ACTION') {
                 state += action.payload
             }
             return state
         }, // hàm không phải 1 giá trị (chạy khi ứng dụng start và mỗi khi state thay đổi)
         product: productSlice,
         dsGheReducer: dsGheReducer,
-        productReducer: ProductReducer,        
-
+        productReducer: ProductReducer,
+        storeReducer: storeReducer,
+        userReducer: userReducer,
 
 
     }

@@ -20,7 +20,8 @@ import ProductsPage from './api/ProductsPage'
 import ToDoListApi from './api/ToDoListApi'
 import DemoFormLogin from './Form/DemoFormLogin'
 import DemoFormik from './Form/DemoFormik'
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
+// Cấu hình router history
+import { BrowserRouter, Outlet, Route, Routes, unstable_HistoryRouter as HistoryRouter } from 'react-router-dom'
 import HomeIndex from './Pages/HomeIndex'
 import Login from './Pages/Login'
 import HomeTemplate from './template/HomeTemplate'
@@ -53,9 +54,12 @@ import DemoUseRef from './Pages/HookToiUu/DemoUseRef/DemoUseRef'
 import DemoCustomHook from './Pages/HookToiUu/CustomHook/DemoCustomHook'
 import LoginAuth from './Pages/Auth/LoginAuth'
 import RegisterAuth from './Pages/Auth/RegisterAuth'
+import Profile from './Pages/Auth/Profile'
+import { createBrowserHistory } from 'history'
+import DemoHOC from './Pages/HOC/DemoHOC'
 
-
-
+export const history = createBrowserHistory();
+// HOC: higher order component
 
 createRoot(document.getElementById('root')).render(
   <>
@@ -85,7 +89,7 @@ createRoot(document.getElementById('root')).render(
       ∙ Props: giá trị có thể thay đổi dùng để binding lên giao diện, props không thể gán lại giá trị (read-only)
     */}
     {/* REACT ROUTER DOM ------------------------------------------------ */}
-    <BrowserRouter>
+    <HistoryRouter history={history}>
       <Provider store={store}>
         <Routes>
 
@@ -107,6 +111,8 @@ createRoot(document.getElementById('root')).render(
             <Route path='demo-usecallback' element={<DemoUseCallback />}></Route>
             <Route path='demo-useref' element={<DemoUseRef />}></Route>
             <Route path='customhook-fetchdata' element={<DemoCustomHook />}></Route>
+            <Route path='profile' element={<Profile />}></Route>
+            <Route path='hoc' element={<DemoHOC />}></Route>
 
           </Route>
 
@@ -145,7 +151,7 @@ createRoot(document.getElementById('root')).render(
 
         </Routes>
       </Provider>
-    </BrowserRouter>
+    </HistoryRouter>
   </>
 
 )

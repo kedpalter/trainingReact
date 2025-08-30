@@ -2,16 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import ItemProduct from './ReactRouterDom/ItemProduct';
+import { httpClientStoreApi } from '../settings/setting';
 
 const HomeIndex = () => {
   const [arrProduct, setArrProduct] = useState([]);
   const getAllProductApi = async () => {
     try {
-      const res = await axios({
-        url: 'https://apistore.cybersoft.edu.vn/api/Product',
-        method: 'GET'
-      })
-      // console.log(res.data);
+      const res = await httpClientStoreApi.get('/Product');
+      console.log(res.data);
       // Lấy data đưa vào state arrProduct
       setArrProduct(res.data.content)
     } catch (err) {

@@ -30,6 +30,12 @@ const HeaderHome = () => {
                         <li className="nav-item">
                             <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/register">Register</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/profile">Profile</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "bg-white text-dark nav-link" : "nav-link"} style={({ isActive }) => isActive ? { border: 'solid 1px red' } : {}} to="/hoc">HOC</NavLink>
+                        </li>
                         <li className="nav-item dropdown">
                             <NavLink className="nav-link dropdown-toggle" to="" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">React Router Dom</NavLink>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
